@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import {Capitalize , reverseString, calculator}from "./index";
+import {Capitalize , reverseString, calculator, ceaserCipher}from "./index";
 
 test('capitalizes first letter', ()=>{
     expect(Capitalize('crunchy')).toBe('Crunchy');
@@ -23,4 +23,14 @@ test('divides two numbers', ()=>{
 })
 test('multiply two numbers together', ()=>{
     expect(calculator.multiply(120, 96)).toBe(11520);
+})
+
+test('encrypts a string with the ceaser cipher', ()=>{
+    expect(ceaserCipher(3, 'yo mama')).toBe('br pdpd');
+})
+test('encrypts a string with the ceaser cipher', ()=>{
+    expect(ceaserCipher(5, 'TarantUla expErt')).toBe('yfwfsyzqf jcujwy');
+})
+test('encrypts a string with the ceaser cipher', ()=>{
+    expect(ceaserCipher(-5, 'TarantUla expErt')).toBe('ovmviopgv zskzmo');
 })
