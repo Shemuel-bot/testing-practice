@@ -35,4 +35,31 @@ const ceaserCipher = (shift, string = "") => {
   }
   return encrypted.toLowerCase();
 };
-export { Capitalize, reverseString, calculator, ceaserCipher };
+
+function findAverage(array = []){
+    let final = 0;
+    array.forEach((x)=>{final+=x})
+    final /=array.length;
+    return final;
+}
+function findMin(array = []){
+    let min = array[0];
+    array.forEach(x=> {if(x<min) min = x})
+    return min
+}
+function findMax(array = []){
+    let max = array[0]
+    array.forEach(x => {if(x>max) max = x})
+    return max
+}
+const analyzeArray = (array = [])=>{
+    const object = {};
+    object.average = findAverage(array);
+    object.min = findMin(array);
+    object.max = findMax(array);
+    object.length = array.length;
+    return object
+}
+
+
+export { Capitalize, reverseString, calculator, ceaserCipher, analyzeArray};
